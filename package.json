@@ -1,9 +1,12 @@
 {
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "babel-node node_modules/.bin/vuepress build docs"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "@vuepress/bundler-vite": "^2.0.0-rc.11",
     "@vuepress/plugin-copy-code": "^2.0.0-rc.30",
     "@vuepress/theme-default": "^2.0.0-rc.30",
