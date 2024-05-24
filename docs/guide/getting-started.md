@@ -31,14 +31,17 @@ cosmic create my-app
 ## 选择配置
 
 - 请选择一个框架
+
 - 是否需要 Eslint 和 Prettier ？
   
 进入到新建的项目，安装对应依赖：
+
 ```bash
 npm install
 ```
 
 ## 目前支持的框架
 - React18
+
 - Vue3
 

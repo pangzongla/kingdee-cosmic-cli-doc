@@ -26,9 +26,9 @@ module.exports = {
 ```
 - `APP_NAME` 这个是自定义控件的名称，苍穹平台会根据这个名称来注册你的控件。并且在RAM开发模式（后面章节提到）下会生产正确的文件名。
 - `ISV` 开发商标识。
-- `MODULE_ID` 领域id。以上三个配置都十分重要，决定了控件是否能被正确注册。
+- `MODULE_ID` 领域 id 。以上三个配置都十分重要，决定了控件是否能被正确注册。
 - `COSMIC_SERVER_URL` 这个就是你本地启动的苍穹服务页面访问地址。
 
-> 改了 `APP_NAME` 记得把 `src/styles/variable.less` 的css变量名称也改了。
+> 改了 `APP_NAME` 记得把 `src/styles/variable.less` 的 css 变量名称也改了。
 
 **其他配置现在看不懂没关系，后面章节会提到~**
