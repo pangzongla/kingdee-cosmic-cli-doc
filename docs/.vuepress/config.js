@@ -134,7 +134,7 @@ export default defineUserConfig({
       },
     ],
   }),
-
+  head: [["link", { rel: "icon", href: "/icon.png" }]],
   lang: "zh-CN",
   title: "kingdee-cosmic-cli",
   description: "kingdee-cosmic-cli的官方使用指导",
