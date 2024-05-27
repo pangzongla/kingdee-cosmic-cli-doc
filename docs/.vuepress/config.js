@@ -35,15 +35,15 @@ export default defineUserConfig({
           },
         ],
       },
-      {
-        text: "仓库",
-        children: [
-          {
-            text: "Gitee",
-            link: "https://gitee.com/pangzong/kingdee-cosmic-cli",
-          },
-        ],
-      },
+      // {
+      //   text: "仓库",
+      //   children: [
+      //     {
+      //       text: "Gitee",
+      //       link: "",
+      //     },
+      //   ],
+      // },
       { text: "作者博客", link: "https://blog.csdn.net/pagnzong?type=blog" },
     ],
     sidebar: [

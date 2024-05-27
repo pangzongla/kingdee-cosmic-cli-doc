@@ -31,6 +31,49 @@ changeTheme('#276ff5') // 不传参数默认为苍穹的商务蓝
 }
 ```
 
-前缀是根据全局配置中的 `APP_NAME` 拼上的，所以修改了记得在 `src/styles/variable.less` 里的css变量名称也改了。
+## Less 预处理器
 
-加入 less 变量是为了让颜色变量更加语义化一些~ 不喜欢可以自行去掉。
+Less 变量名称的文件位置在 `src/styles/variable.less` 。
+
+因为 css 变量的前缀是根据全局配置中的 `APP_NAME` 动态拼接上的，所以如果修改了 `APP_NAME` 需要把 `variable.less` 里的 css 变量名称也改了。
+
+**加入 less 变量是为了让颜色变量更加语义化一些~ 不喜欢可以自行去掉。**
+
+### 在 Vue3 起步工程中使用
+
+```vue
+<style scoped lang="less">
+@import "./styles/variable.less";
+.wrapper {
+  background-color: @background-color;
+  color: @primary-color;
+}
+</style>
+```
+
+### 在 React18 起步工程中使用
+
+在 module.less 文件中引用：
+
+```less
+@import "./styles/variable.less";
+.wrapper {
+  background-color: @background-color;
+  color: @primary-color;
+}
+```
+
+然后在组件中引入 less 文件：
+
+```tsx
+import React from "react";
+import Style from "./index.module.less";
+
+const App: React.FC = () => {
+  return (
+    <div className={Style.wrapper}></div>
+  );
+};
+
+export default App;
+```
