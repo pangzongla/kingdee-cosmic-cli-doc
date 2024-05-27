@@ -29,7 +29,7 @@ changeTheme('#276ff5') // 不传参数默认为苍穹的商务蓝
     --react_demo-color-theme-8: #002EA3;
     --react_demo-color-theme-9: #001F7B;
 }
-```css
+```
 
 前缀是根据全局配置中的 `APP_NAME` 拼上的，所以修改了记得在 `src/styles/variable.less` 里的css变量名称也改了。
 

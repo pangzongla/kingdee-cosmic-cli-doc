@@ -30,6 +30,7 @@
 <p>新增对Vue3的支持。</p>
 </li>
 </ul>
+<p><strong>如果好用请 star 🌟 鼓励一下~</strong></p>
 </div></template>
 
 

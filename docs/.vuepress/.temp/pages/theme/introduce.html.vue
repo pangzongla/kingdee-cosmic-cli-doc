@@ -21,10 +21,8 @@
     <span class="token property">--react_demo-color-theme-8</span><span class="token punctuation">:</span> #002EA3<span class="token punctuation">;</span>
     <span class="token property">--react_demo-color-theme-9</span><span class="token punctuation">:</span> #001F7B<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-```css
-
-前缀是根据全局配置中的 `APP_NAME` 拼上的，所以修改了记得在 `src/styles/variable.less` 里的css变量名称也改了。
-
-加入 less 变量是为了让颜色变量更加语义化一些~ 不喜欢可以自行去掉。</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>前缀是根据全局配置中的 <code v-pre>APP_NAME</code> 拼上的，所以修改了记得在 <code v-pre>src/styles/variable.less</code> 里的css变量名称也改了。</p>
+<p>加入 less 变量是为了让颜色变量更加语义化一些~ 不喜欢可以自行去掉。</p>
+</div></template>
 
 

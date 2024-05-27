@@ -1,6 +1,6 @@
 <template><div><h1 id="安装与创建" tabindex="-1"><a class="header-anchor" href="#安装与创建"><span>安装与创建</span></a></h1>
-<p>支持公司内外网安装！（<strong>内网脚手架和起步工程版本会落后外网</strong>）</p>
 <p>node 环境版本建议18以上！</p>
+<p><strong>注意：因公司IP地址安全问题（脚手架代码里不能涉及到），所以不再提供内网安装，请在外网安装脚手架！</strong></p>
 <h2 id="安装脚手架" tabindex="-1"><a class="header-anchor" href="#安装脚手架"><span>安装脚手架</span></a></h2>
 <div class="language-bash line-numbers-mode" data-ext="sh" data-title="sh"><pre v-pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> kingdee-cosmic-cli
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="查看版本" tabindex="-1"><a class="header-anchor" href="#查看版本"><span>查看版本</span></a></h2>

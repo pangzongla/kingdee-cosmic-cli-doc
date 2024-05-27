@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: images/logo.svg
+heroImage: images/home.svg
 heroText: kingdee-cosmic-cli
 tagline: 🔥 金蝶云苍穹平台自定义控件开发脚手架 🔥
 actionText: 快速上手 →
