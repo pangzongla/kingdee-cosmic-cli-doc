@@ -12,11 +12,15 @@
 
 - 将 Redux 替换成 Zustand。
 
+- 加入 git cz 代码提交规范。
+
 # Vue3 起步工程未来支持
 
 - 优化 Webpack 配置。
 
 - 添加 Eslint 等校验工具的配置。
+
+- 加入 git cz 代码提交规范。
 
 # 欢迎你的加入 ❤️
 
@@ -27,3 +31,15 @@
 感谢以下大佬的建议与支持：
 
 [@zzkkui](https://gitee.com/Quintus-Peng)
+
+## 起步工程仓库说明
+
+地址：[Gitee](https://gitee.com/pangzong/kingdee-cosmic)
+
+目前有效的分支为：
+
+- master ：React18 起步工程
+
+- eslint ：React18 + Eslint 起步工程
+
+- vue3 ：Vue3 起步工程
