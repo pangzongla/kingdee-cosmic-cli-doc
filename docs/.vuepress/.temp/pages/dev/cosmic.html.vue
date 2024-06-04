@@ -1,7 +1,8 @@
 <template><div><h1 id="苍穹预览模式" tabindex="-1"><a class="header-anchor" href="#苍穹预览模式"><span>苍穹预览模式</span></a></h1>
 <p>执行指令：</p>
-<div class="language-bash line-numbers-mode" data-ext="sh" data-title="sh"><pre v-pre class="language-bash"><code><span class="token function">npm</span> run dev
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>你会看到根目录中出现一个名为 <code v-pre>cache</code> 的新文件夹，其中的文件是 Webpack 在开发模式下将打包到内存中的二进制文件转换后复制到此处的。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre class="language-bash"><code><span class="line"><span class="token function">npm</span> run dev</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>你会看到根目录中出现一个名为 <code v-pre>cache</code> 的新文件夹，其中的文件是 Webpack 在开发模式下将打包到内存中的二进制文件转换后复制到此处的。</p>
 <p>如何预览？</p>
 <p>首先我在苍穹的开发平台上把自己的自定义控件注册上，例如我的 React18 起步工程例子</p>
 <blockquote>

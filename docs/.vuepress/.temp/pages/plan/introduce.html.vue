@@ -1,10 +1,13 @@
 <template><div><h1 id="脚手架未来支持" tabindex="-1"><a class="header-anchor" href="#脚手架未来支持"><span>脚手架未来支持</span></a></h1>
 <ul>
 <li>
-<p>Vue3 模板加入 Eslint 等校验工具。</p>
+<p>选择 Vue3 选项后加入 Eslint 等校验工具的可选项。</p>
 </li>
 <li>
 <p>React18 起步工程加入 KDesign 组件库可选项。</p>
+</li>
+<li>
+<p>考虑开发一个符合金蝶规范的自定义 Eslint 拓展工具。</p>
 </li>
 </ul>
 <h1 id="react18-起步工程未来支持" tabindex="-1"><a class="header-anchor" href="#react18-起步工程未来支持"><span>React18 起步工程未来支持</span></a></h1>
