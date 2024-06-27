@@ -125,7 +125,12 @@ export default defineUserConfig({
       {
         text: "规范与温馨提示",
         link: "/rule/introduce",
-        children: [],
+        collapsible: false,
+        children: [
+          { text: "Eslint", link: "/rule/introduce" },
+          { text: "工程与编码规范", link: "/rule/rules" },
+          { text: "温馨提示", link: "/rule/notice" },
+        ],
       },
       {
         text: "未来计划与感谢 📅",

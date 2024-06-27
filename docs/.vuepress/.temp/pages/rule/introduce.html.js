@@ -1,5 +1,5 @@
-import comp from "/Users/liujingpang/code/react/kingdee-cosmic-cli-doc/docs/.vuepress/.temp/pages/rule/introduce.html.vue"
-const data = JSON.parse("{\"path\":\"/rule/introduce.html\",\"title\":\"Eslint 与 Prettier\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1716542879000,\"contributors\":[{\"name\":\"庞囧\",\"email\":\"980100681@qq.com\",\"commits\":1}]},\"filePathRelative\":\"rule/introduce.md\"}")
+import comp from "E:/code/webpack/kingdee-cosmic-cli-doc/docs/.vuepress/.temp/pages/rule/introduce.html.vue"
+const data = JSON.parse("{\"path\":\"/rule/introduce.html\",\"title\":\"ESlint 代码格式校验方案选择\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[{\"level\":2,\"title\":\"antfu\",\"slug\":\"antfu\",\"link\":\"#antfu\",\"children\":[{\"level\":3,\"title\":\"CSS 和 HTML的格式化\",\"slug\":\"css-和-html的格式化\",\"link\":\"#css-和-html的格式化\",\"children\":[]},{\"level\":3,\"title\":\"一些坑的提示\",\"slug\":\"一些坑的提示\",\"link\":\"#一些坑的提示\",\"children\":[]}]}],\"git\":{\"updatedTime\":1716542879000,\"contributors\":[{\"name\":\"庞囧\",\"email\":\"980100681@qq.com\",\"commits\":1}]},\"filePathRelative\":\"rule/introduce.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

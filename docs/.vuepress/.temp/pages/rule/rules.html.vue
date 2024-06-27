@@ -1,0 +1,234 @@
+<template><div><h1 id="工程与编码规范" tabindex="-1"><a class="header-anchor" href="#工程与编码规范"><span>工程与编码规范</span></a></h1>
+<blockquote>
+<p>原文档编写人 <a href="https://gitee.com/Quintus-Peng" target="_blank" rel="noopener noreferrer">@zzkkui</a>，在原文档基础上做调整。</p>
+</blockquote>
+<h2 id="命名规则" tabindex="-1"><a class="header-anchor" href="#命名规则"><span>命名规则</span></a></h2>
+<p>基本规则：</p>
+<ol>
+<li>使用大小写英文字母和下划线、中划线组成</li>
+<li>不能使用关键字和保留字</li>
+<li>能见名知意</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>命名规则</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件夹名</td>
+<td>小驼峰命名法</td>
+<td>account、devLicense</td>
+</tr>
+<tr>
+<td>文件名</td>
+<td>小驼峰命名法，后缀要能体现文件的类型</td>
+<td>userDetail.tsx、config.ts、global.scss</td>
+</tr>
+<tr>
+<td>图片名</td>
+<td>英文小写，分隔符用中划线，带精度</td>
+<td>login-bg@2x.png</td>
+</tr>
+<tr>
+<td>组件名</td>
+<td>大驼峰命名法</td>
+<td>ProductConf（除 index.tsx）</td>
+</tr>
+<tr>
+<td>常量名</td>
+<td>英文大写，分割符用下划线</td>
+<td>PRODUCT_INFO</td>
+</tr>
+<tr>
+<td>变量名</td>
+<td>小驼峰命名法，布尔类型用is/has开头</td>
+<td>userInfo、isInstall</td>
+</tr>
+<tr>
+<td>方法名</td>
+<td>小驼峰命名法</td>
+<td>getUserInfo</td>
+</tr>
+<tr>
+<td>组件属性名</td>
+<td>小驼峰命名法</td>
+<td>activeKey</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>若创建项目时，脚手架选项选择了加入 Eslint ，编辑器会自动校验。</p>
+</blockquote>
+<h2 id="注释" tabindex="-1"><a class="header-anchor" href="#注释"><span>注释</span></a></h2>
+<ol>
+<li>写主要注释
+<strong>复杂方法、组件需要注释</strong></li>
+</ol>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/** 
+ * <span class="token keyword">@description</span> 计算两数之和 
+ * <span class="token keyword">@param</span> <span class="token parameter">a</span> <span class="token punctuation">{</span>string | number<span class="token punctuation">}</span> 第一个加数 
+ * <span class="token keyword">@param</span> <span class="token parameter">b</span> <span class="token punctuation">{</span>?string | number | undefined<span class="token punctuation">}</span> 第二个加数 
+ * <span class="token keyword">@returns</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 两数之和 
+ */</span> 
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">Number</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
+<li>特殊注释</li>
+</ol>
+<ul>
+<li>TODO:</li>
+<li>NOTE:</li>
+<li>单行逻辑注释</li>
+</ul>
+<h2 id="导出" tabindex="-1"><a class="header-anchor" href="#导出"><span>导出</span></a></h2>
+<p>公共组件目录提供 <code v-pre>index</code> 文件导出所有组件，外部引入时通过该 <code v-pre>index</code> 引入。</p>
+<h2 id="编码规范" tabindex="-1"><a class="header-anchor" href="#编码规范"><span>编码规范</span></a></h2>
+<p><strong>函数编码</strong></p>
+<ol>
+<li>超过1个地方的重复逻辑则封装成函数，超过2个地方使用的函数则抽成工具函数</li>
+<li>函数与函数之间用一个空行隔开（Eslint 校验支持）</li>
+<li>函数柯里化：一个函数就干一件事</li>
+</ol>
+<p><strong>组件编码顺序</strong></p>
+<ol>
+<li>解构 <code v-pre>props</code> (如果有)</li>
+<li>react相关的第三方包中的钩子函数(除了 useEffect )</li>
+<li>方法(跟 api 有关的方法放最后)</li>
+<li>内部组件</li>
+<li>useEffect
+(1). 无依赖
+(2). 有依赖(按照调用的先后顺序排序)
+(3). 返回值是函数</li>
+</ol>
+<p><strong>jsx编码规则</strong></p>
+<ol>
+<li>使用 jsx（tsx）语法</li>
+<li>没有子节点的组件，使用自闭合语法</li>
+</ol>
+<div class="language-jsx line-numbers-mode" data-ext="jsx" data-title="jsx"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ConfirmModal</span></span> <span class="token punctuation">/></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ol start="3">
+<li>组件有多个属性时</li>
+</ol>
+<ul>
+<li>每个属性各占一行</li>
+<li>属性值如果是常量字符串，使用字面量赋值title=&quot;标题1&quot;，而不是title={'标题1'}</li>
+<li>属性值如果是 true ，则省略属性值</li>
+<li>属性在前，方法在后</li>
+<li>闭标签另起一行</li>
+</ul>
+<div class="language-jsx line-numbers-mode" data-ext="jsx" data-title="jsx"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ConfirmModal</span></span> 
+  <span class="token attr-name">visible</span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>标题1<span class="token punctuation">"</span></span>
+  <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>我是body正文<span class="token punctuation">"</span></span>
+  <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#ccc'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+  <span class="token attr-name">onCancel</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">handleModalCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="token punctuation">/></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>组件规范</strong></p>
+<ol>
+<li>组件 props 类型需详尽，必要时通过传递泛型约束</li>
+<li>在编写组价之前，需要考虑其可复用性、功能单一性，做拆分设计</li>
+<li>基于 react 的组件 render 原理，针对组件状态的设计（状态提升 or 状态下沉）</li>
+</ol>
+<p><strong>针对 Common 组件</strong>（脱离业务逻辑）</p>
+<ol start="4">
+<li>与业务逻辑完全解耦：如有需要 store 通过 props 传入；如有对外交互，通过传入回调触发</li>
+</ol>
+<p><strong>import 规范</strong></p>
+<ol>
+<li>与react相关的第三方包
+比如react、react-redux、react-router (按照包使用的先后顺序排序)</li>
+<li>其他第三方包</li>
+<li>组件库
+<ul>
+<li>@kdcloudjs/kdesign</li>
+<li>自定义组件
+<ul>
+<li>公共组件</li>
+<li>非公共组件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类型（使用 import type ** from **）</li>
+<li>常量
+<ul>
+<li>全局常量</li>
+<li>局部常量</li>
+</ul>
+</li>
+<li>方法
+<ul>
+<li>工具方法</li>
+<li>其他文件中的方法</li>
+</ul>
+</li>
+<li>api</li>
+<li>store</li>
+<li>图片</li>
+<li>样式</li>
+</ol>
+<p><strong>PS: 能使用 alias 使用 alias</strong></p>
+<blockquote>
+<p>若创建项目时，脚手架选项选择了加入 Eslint ，编辑器会自动校验。但具体识别需要自己在 <code v-pre>eslint.config.mjs</code> 里补充。</p>
+</blockquote>
+<h2 id="git-提交规范" tabindex="-1"><a class="header-anchor" href="#git-提交规范"><span>git 提交规范</span></a></h2>
+<p><strong>commit 分类为，必选其一：</strong></p>
+<ol>
+<li>fix: 修复bug</li>
+<li>hotfix:线上问题紧急修复</li>
+<li>feat: 新功能</li>
+<li>test: 增加单元测试代码</li>
+<li>doc：增加注释或者文档</li>
+<li>perf: 性能优化</li>
+<li>refactor：代码重构</li>
+<li>build: 构建工具或构建过程等的变动，如：gulp 换成了 webpack，webpack 升级等</li>
+<li>cover：代码覆盖，如：主干覆盖基线</li>
+<li>format：代码格式化</li>
+<li>description 是对本次提交的简短描述。不超过50个字符，推荐以动词开头，如： 设置、修改、增加、删减、撤销等</li>
+</ol>
+<h2 id="类型" tabindex="-1"><a class="header-anchor" href="#类型"><span>类型</span></a></h2>
+<p>全局声明或者不用改动的类型使用 <code v-pre>.d.ts</code>，直接放在根目录</p>
+<ol>
+<li>组件内使用的类型一般直接定义在组件文件内（同 hooks、util等）</li>
+<li>关联组件类型较多可以单独使用 <code v-pre>type.ts</code> 来声明类型，这类复杂且有关联类型必要时需要注释</li>
+<li>store 中如果数据较多，使用 <code v-pre>type.ts</code> 来声明类型，必要时需要注释</li>
+<li>react 中一些 hooks 方法，包括大多数第三方库暴露的方法都是需要传入泛型</li>
+</ol>
+<h2 id="ts规范" tabindex="-1"><a class="header-anchor" href="#ts规范"><span>ts规范</span></a></h2>
+<p>1、使用枚举设置常量集合</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token comment">// Bad</span>
+<span class="token keyword">const</span> Status <span class="token operator">=</span> <span class="token punctuation">{</span>
+    Success<span class="token operator">:</span> <span class="token string">'success'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Good</span>
+<span class="token keyword">enum</span> Status <span class="token punctuation">{</span>
+    Success <span class="token operator">=</span> <span class="token string">'success'</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、引用类型变量应该保证类型正确，不正确的需要手动声明</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token comment">//自动推断</span>
+<span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">// number[]</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token comment">// 显示声明</span>
+<span class="token comment">// Bad</span>
+<span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// any[]</span>
+
+<span class="token comment">// Good</span>
+<span class="token keyword">let</span> bar<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、不要为返回值会被忽略的回调函数设置返回值类型<code v-pre>any</code>：</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token comment">// Bad</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token function-variable function">x</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>应该为返回值会被忽略的回调函数设置返回值类型<code v-pre>void</code>：</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code><span class="token comment">// Good</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token function-variable function">x</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+
