@@ -12,10 +12,10 @@
 <p>如果我们的组件数量多，嵌套也多，获取数据会特别麻烦，要么层层传递，要么使用订阅发布模式，要么使用状态管理工具监听。然而这些都不是好的方法。</p>
 </li>
 <li>
-<p>在咱们的RAM模式开发时，根本就没有 <code v-pre>model</code> 这个全局对象，无法调用异步请求。</p>
+<p>在咱们的 RAM 模式开发时，根本就没有 <code v-pre>model</code> 这个全局对象，无法调用异步请求。</p>
 </li>
 </ul>
-<p>如果有一个统一的 API 方法调用，并且支持Promise、Await写法，那么就可以很方便地解决上述问题。于是我设计了一个请求策略来模拟Promise行为，并且提供了两种请求模式。</p>
+<p>如果有一个统一的 API 方法调用，并且支持 Promise、Await 写法，那么就可以很方便地解决上述问题。于是我设计了一个请求策略来模拟 Promise 行为，并且提供了两种请求模式。</p>
 <h2 id="请求模式的设计" tabindex="-1"><a class="header-anchor" href="#请求模式的设计"><span>请求模式的设计</span></a></h2>
 <p>假设我们有几个不同的请求方法/任务，例如 <code v-pre>a, b, c</code> 。但同一个请求方法可能会被陆续请求多次，所以同一个请求方法的不同时间触发会在后面加数字表示，例如 <code v-pre>a1, a2, a3</code> 。</p>
 <h3 id="单队列-默认采用" tabindex="-1"><a class="header-anchor" href="#单队列-默认采用"><span>单队列（默认采用）</span></a></h3>
@@ -38,7 +38,7 @@
 <p>如果采用多队列模式，后端必须在 <code v-pre>data</code> 字段中多返回一个字段表示请求的方法名称，这样前端才知道该请求是哪个方法，不同队列才能匹配到对应数据，精确结束任务。</p>
 <p>开启多队列模式需要在全局设置中设置 <code v-pre>REQUEST_MODE</code> 为 <code v-pre>concurrent</code>（默认为单队列 <code v-pre>single</code> ） ，<code v-pre>UPDATE_METHODS_FIELD</code> 填写后端请求的方法名称字段名。</p>
 <h2 id="接口请求书写方式" tabindex="-1"><a class="header-anchor" href="#接口请求书写方式"><span>接口请求书写方式</span></a></h2>
-<p>综上两种队列模式的设计，我对 <code v-pre>model.invoke</code> 进行了封装，模拟出了 Promise 行为。并且支持在RAM模式下使用（通过 Axios 或者 Websocket 与 Mock 服务交互）。</p>
+<p>综上两种队列模式的设计，我对 <code v-pre>model.invoke</code> 进行了封装，模拟出了 Promise 行为。并且支持在 RAM 模式下使用（通过 Axios 或者 Websocket 与 Mock 服务交互）。</p>
 <p>具体使用方式参考：</p>
 <ul>
 <li>

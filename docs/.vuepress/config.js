@@ -93,23 +93,25 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "React18起步工程",
+        text: "React18 起步工程",
         link: "/react/introduce",
         collapsible: false,
         children: [
           { text: "介绍", link: "/react/introduce" },
           { text: "接口请求书写", link: "/react/ajax" },
           { text: "状态管理", link: "/react/store" },
+          { text: "国际化", link: "/react/internationalization" },
         ],
       },
       {
-        text: "Vue3起步工程",
+        text: "Vue3 起步工程",
         link: "/vue/introduce",
         collapsible: false,
         children: [
           { text: "介绍", link: "/vue/introduce" },
           { text: "接口请求书写", link: "/vue/ajax" },
           { text: "状态管理", link: "/vue/store" },
+          { text: "国际化", link: "/vue/internationalization" },
         ],
       },
       {

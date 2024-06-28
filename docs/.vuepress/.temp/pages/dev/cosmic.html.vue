@@ -19,6 +19,7 @@
 <p>注意！如果后端环境更新了，需要重新从 &quot;眼睛&quot; 预览按钮那里重新打开页面，不然页面关联到的后端资源还是旧的。</p>
 <p>当然具体想怎么浏览效果还是视情况而定，我只是提供了一个简单的方法~。</p>
 <p><strong>这开发、联调体验嗖嗖的提升！😝</strong></p>
+<p>如果想修改端口号，可以在 <code v-pre>app.config.js</code> 中修改 <code v-pre>DEV_CACHE_PORT</code></p>
 </div></template>
 
 

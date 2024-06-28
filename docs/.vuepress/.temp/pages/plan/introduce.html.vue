@@ -1,22 +1,11 @@
 <template><div><h1 id="脚手架未来支持" tabindex="-1"><a class="header-anchor" href="#脚手架未来支持"><span>脚手架未来支持</span></a></h1>
 <ul>
-<li>
-<p>选择 Vue3 选项后加入 Eslint 等校验工具的可选项。</p>
-</li>
-<li>
-<p>React18 起步工程加入 KDesign 组件库可选项。</p>
-</li>
-<li>
-<p>考虑开发一个符合金蝶规范的自定义 Eslint 拓展工具。</p>
-</li>
+<li>React18 起步工程加入 KDesign 组件库可选项。</li>
 </ul>
 <h1 id="react18-起步工程未来支持" tabindex="-1"><a class="header-anchor" href="#react18-起步工程未来支持"><span>React18 起步工程未来支持</span></a></h1>
 <ul>
 <li>
 <p>优化 Webpack 配置。</p>
-</li>
-<li>
-<p>优化 Eslint 等校验工具的配置。</p>
 </li>
 <li>
 <p>将 Redux 替换成 Zustand。</p>
@@ -29,9 +18,6 @@
 <ul>
 <li>
 <p>优化 Webpack 配置。</p>
-</li>
-<li>
-<p>添加 Eslint 等校验工具的配置。</p>
 </li>
 <li>
 <p>加入 git cz 代码提交规范。</p>
@@ -50,10 +36,13 @@
 <p>master ：React18 起步工程</p>
 </li>
 <li>
-<p>eslint ：React18 + Eslint 起步工程</p>
+<p>react18+eslint ：React18 + ESlint 起步工程</p>
 </li>
 <li>
 <p>vue3 ：Vue3 起步工程</p>
+</li>
+<li>
+<p>vue3+eslint ：Vue3 + ESlint 起步工程</p>
 </li>
 </ul>
 </div></template>
