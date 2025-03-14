@@ -1,4 +1,4 @@
-import comp from "E:/code/webpack/kingdee-cosmic-cli-doc/docs/.vuepress/.temp/pages/rule/notice.html.vue"
+import comp from "/Users/liujingpang/code/other/kingdee-cosmic-cli-doc/docs/.vuepress/.temp/pages/rule/notice.html.vue"
 const data = JSON.parse("{\"path\":\"/rule/notice.html\",\"title\":\"温馨提示 🙋\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1719455711000,\"contributors\":[{\"name\":\"庞囧\",\"email\":\"980100681@qq.com\",\"commits\":1}]},\"filePathRelative\":\"rule/notice.md\"}")
 export { comp, data }
 

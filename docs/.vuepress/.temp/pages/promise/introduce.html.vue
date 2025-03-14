@@ -1,8 +1,9 @@
 <template><div><h1 id="策略设计" tabindex="-1"><a class="header-anchor" href="#策略设计"><span>策略设计</span></a></h1>
 <h2 id="背景" tabindex="-1"><a class="header-anchor" href="#背景"><span>背景</span></a></h2>
 <p>在自定义控件中，如果想和后端做数据交互，需要借助全局对象 <code v-pre>model</code> 的 API 调用才行，例如：</p>
-<div class="language-javascript line-numbers-mode" data-ext="js" data-title="js"><pre v-pre class="language-javascript"><code>model<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token string">'Hello World!'</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line">model<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token string">'Hello World!'</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><blockquote>
 <p>想要了解更多关于 <code v-pre>model</code> 的信息，请参考 <a href="https://vip.kingdee.com/article/315434614497953792?productLineId=29&amp;isKnowledge=2&amp;lang=zh-CN" target="_blank" rel="noopener noreferrer">360°教你搞定“自定义控件”（API手册篇）</a>，如果链接失效了，请从右上角的社区链接进入，然后自行搜索~</p>
 </blockquote>
 <p>当后端返回数据时，会触发控件注册时的 <code v-pre>update</code> 方法，从而获取到返回的数据。</p>
