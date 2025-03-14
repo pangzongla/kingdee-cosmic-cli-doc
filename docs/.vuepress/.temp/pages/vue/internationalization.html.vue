@@ -2,7 +2,7 @@
 <p>生产环境的国际化方案采用的是社区提供的方法：<a href="https://vip.kingdee.com/school/detail/238388113520005120?productLineId=29&amp;lang=zh-CN" target="_blank" rel="noopener noreferrer">自定义控件的多语言开发</a></p>
 <p>主要利用的 API 为 <code v-pre>window.KDApi.getLangMsg</code></p>
 <p>但是开发环境没有这个 API，于是做了一层封装来模拟行为，使用例子：</p>
-<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts" data-title="ts"><pre v-pre><code><span class="line"><span class="token operator">&lt;</span>script setup lang<span class="token operator">=</span><span class="token string">"ts"</span><span class="token operator">></span></span>
+<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token operator">&lt;</span>script setup lang<span class="token operator">=</span><span class="token string">"ts"</span><span class="token operator">></span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> inject<span class="token punctuation">,</span> ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useLang <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@hooks/index'</span></span>
 <span class="line"></span>

@@ -16,10 +16,165 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-AVLKINWM.js";
-import {
-  setupDevtoolsPlugin
-} from "./chunk-UKCZNIRO.js";
+} from "./chunk-LW4I4DCF.js";
+
+// node_modules/@vue/devtools-api/lib/esm/env.js
+function getDevtoolsGlobalHook() {
+  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
+}
+function getTarget() {
+  return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : {};
+}
+var isProxyAvailable = typeof Proxy === "function";
+
+// node_modules/@vue/devtools-api/lib/esm/const.js
+var HOOK_SETUP = "devtools-plugin:setup";
+var HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
+
+// node_modules/@vue/devtools-api/lib/esm/time.js
+var supported;
+var perf;
+function isPerformanceSupported() {
+  var _a;
+  if (supported !== void 0) {
+    return supported;
+  }
+  if (typeof window !== "undefined" && window.performance) {
+    supported = true;
+    perf = window.performance;
+  } else if (typeof globalThis !== "undefined" && ((_a = globalThis.perf_hooks) === null || _a === void 0 ? void 0 : _a.performance)) {
+    supported = true;
+    perf = globalThis.perf_hooks.performance;
+  } else {
+    supported = false;
+  }
+  return supported;
+}
+function now() {
+  return isPerformanceSupported() ? perf.now() : Date.now();
+}
+
+// node_modules/@vue/devtools-api/lib/esm/proxy.js
+var ApiProxy = class {
+  constructor(plugin, hook) {
+    this.target = null;
+    this.targetQueue = [];
+    this.onQueue = [];
+    this.plugin = plugin;
+    this.hook = hook;
+    const defaultSettings = {};
+    if (plugin.settings) {
+      for (const id in plugin.settings) {
+        const item = plugin.settings[id];
+        defaultSettings[id] = item.defaultValue;
+      }
+    }
+    const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
+    let currentSettings = Object.assign({}, defaultSettings);
+    try {
+      const raw = localStorage.getItem(localSettingsSaveId);
+      const data = JSON.parse(raw);
+      Object.assign(currentSettings, data);
+    } catch (e) {
+    }
+    this.fallbacks = {
+      getSettings() {
+        return currentSettings;
+      },
+      setSettings(value) {
+        try {
+          localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
+        } catch (e) {
+        }
+        currentSettings = value;
+      },
+      now() {
+        return now();
+      }
+    };
+    if (hook) {
+      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
+        if (pluginId === this.plugin.id) {
+          this.fallbacks.setSettings(value);
+        }
+      });
+    }
+    this.proxiedOn = new Proxy({}, {
+      get: (_target, prop) => {
+        if (this.target) {
+          return this.target.on[prop];
+        } else {
+          return (...args) => {
+            this.onQueue.push({
+              method: prop,
+              args
+            });
+          };
+        }
+      }
+    });
+    this.proxiedTarget = new Proxy({}, {
+      get: (_target, prop) => {
+        if (this.target) {
+          return this.target[prop];
+        } else if (prop === "on") {
+          return this.proxiedOn;
+        } else if (Object.keys(this.fallbacks).includes(prop)) {
+          return (...args) => {
+            this.targetQueue.push({
+              method: prop,
+              args,
+              resolve: () => {
+              }
+            });
+            return this.fallbacks[prop](...args);
+          };
+        } else {
+          return (...args) => {
+            return new Promise((resolve) => {
+              this.targetQueue.push({
+                method: prop,
+                args,
+                resolve
+              });
+            });
+          };
+        }
+      }
+    });
+  }
+  async setRealTarget(target) {
+    this.target = target;
+    for (const item of this.onQueue) {
+      this.target.on[item.method](...item.args);
+    }
+    for (const item of this.targetQueue) {
+      item.resolve(await this.target[item.method](...item.args));
+    }
+  }
+};
+
+// node_modules/@vue/devtools-api/lib/esm/index.js
+function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
+  const descriptor = pluginDescriptor;
+  const target = getTarget();
+  const hook = getDevtoolsGlobalHook();
+  const enableProxy = isProxyAvailable && descriptor.enableEarlyProxy;
+  if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
+    hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
+  } else {
+    const proxy = enableProxy ? new ApiProxy(descriptor, hook) : null;
+    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
+    list.push({
+      pluginDescriptor: descriptor,
+      setupFn,
+      proxy
+    });
+    if (proxy) {
+      setupFn(proxy.proxiedTarget);
+    }
+  }
+}
 
 // node_modules/vue-router/dist/vue-router.mjs
 var isBrowser = typeof document !== "undefined";
@@ -697,7 +852,7 @@ function tokensToParser(segments, extraOptions) {
     pattern += "/?";
   if (options.end)
     pattern += "$";
-  else if (options.strict)
+  else if (options.strict && !pattern.endsWith("/"))
     pattern += "(?:/|$)";
   const re = new RegExp(pattern, options.sensitive ? "" : "i");
   function parse(path) {
@@ -993,8 +1148,12 @@ function createRouterMatcher(routes, globalOptions) {
         originalMatcher = originalMatcher || matcher;
         if (originalMatcher !== matcher)
           originalMatcher.alias.push(matcher);
-        if (isRootAdd && record.name && !isAliasRecord(matcher))
+        if (isRootAdd && record.name && !isAliasRecord(matcher)) {
+          if (true) {
+            checkSameNameAsAncestor(record, parent);
+          }
           removeRoute(record.name);
+        }
       }
       if (isMatchable(matcher)) {
         insertMatcher(matcher);
@@ -1196,6 +1355,13 @@ function checkSameParams(a, b) {
 function checkChildMissingNameWithEmptyPath(mainNormalizedRecord, parent) {
   if (parent && parent.record.name && !mainNormalizedRecord.name && !mainNormalizedRecord.path) {
     warn(`The route named "${String(parent.record.name)}" has a child without a name and an empty path. Using that name won't render the empty path child so you probably want to move the name to the child instead. If this is intentional, add a name to the child route to remove the warning.`);
+  }
+}
+function checkSameNameAsAncestor(record, parent) {
+  for (let ancestor = parent; ancestor; ancestor = ancestor.parent) {
+    if (ancestor.record.name === record.name) {
+      throw new Error(`A route named "${String(record.name)}" has been added as a ${parent === ancestor ? "child" : "descendant"} of a route with the same name. Route names must be unique and a nested route cannot use the same name as an ancestor.`);
+    }
   }
 }
 function checkMissingParamsInAbsolutePath(record, parent) {
@@ -1535,10 +1701,14 @@ function useLink(props) {
   const isExactActive = computed(() => activeRecordIndex.value > -1 && activeRecordIndex.value === currentRoute.matched.length - 1 && isSameRouteLocationParams(currentRoute.params, route.value.params));
   function navigate(e = {}) {
     if (guardEvent(e)) {
-      return router[unref(props.replace) ? "replace" : "push"](
+      const p = router[unref(props.replace) ? "replace" : "push"](
         unref(props.to)
         // avoid uncaught errors are they are logged anyway
       ).catch(noop);
+      if (props.viewTransition && typeof document !== "undefined" && "startViewTransition" in document) {
+        document.startViewTransition(() => p);
+      }
+      return p;
     }
     return Promise.resolve();
   }
@@ -1568,6 +1738,9 @@ function useLink(props) {
     isExactActive,
     navigate
   };
+}
+function preferSingleVNode(vnodes) {
+  return vnodes.length === 1 ? vnodes[0] : vnodes;
 }
 var RouterLinkImpl = defineComponent({
   name: "RouterLink",
@@ -1601,7 +1774,7 @@ var RouterLinkImpl = defineComponent({
       [getLinkClass(props.exactActiveClass, options.linkExactActiveClass, "router-link-exact-active")]: link.isExactActive
     }));
     return () => {
-      const children = slots.default && slots.default(link);
+      const children = slots.default && preferSingleVNode(slots.default(link));
       return props.custom ? children : h("a", {
         "aria-current": link.isExactActive ? props.ariaCurrentValue : null,
         href: link.href,
@@ -2509,7 +2682,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
       const toLocation = resolve(to);
       const shouldRedirect = handleRedirectRecord(toLocation);
       if (shouldRedirect) {
-        pushWithRedirect(assign(shouldRedirect, { replace: true }), toLocation).catch(noop);
+        pushWithRedirect(assign(shouldRedirect, { replace: true, force: true }), toLocation).catch(noop);
         return;
       }
       pendingLocation = toLocation;
@@ -2531,7 +2704,9 @@ ${JSON.stringify(newTargetLocation, null, 2)}
           /* ErrorTypes.NAVIGATION_GUARD_REDIRECT */
         )) {
           pushWithRedirect(
-            error.to,
+            assign(locationAsObject(error.to), {
+              force: true
+            }),
             toLocation
             // avoid an uncaught rejection, let push call triggerError
           ).then((failure) => {
@@ -2748,7 +2923,7 @@ export {
 
 vue-router/dist/vue-router.mjs:
   (*!
-    * vue-router v4.4.5
+    * vue-router v4.5.0
     * (c) 2024 Eduardo San Martin Morote
     * @license MIT
     *)

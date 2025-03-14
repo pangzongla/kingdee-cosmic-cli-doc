@@ -2,7 +2,7 @@
 <p>首先我们要先知道苍穹平台是怎么拉取控件资源的。</p>
 <p>当需要加载到某个自定义控件时，会去主动拉取执行控件的 <code v-pre>index.js</code> 文件，并执行。</p>
 <p>例如：</p>
-<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">KDApi</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">KDApi</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">    <span class="token comment">// 构造函数</span></span>
 <span class="line">    <span class="token keyword">function</span> <span class="token function">demo</span> <span class="token punctuation">(</span><span class="token parameter">model</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_setModel</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span></span>
@@ -54,7 +54,7 @@
 <p>考虑到我们的起步工程都是基于 Webpack + 框架，当打包的产物资源变多或者用了哈希值名称后，我们还需要在 <code v-pre>index.js</code> 里去手动修改引入这些资源，显得不是那么方便。</p>
 <h1 id="动态拉取策略" tabindex="-1"><a class="header-anchor" href="#动态拉取策略"><span>动态拉取策略</span></a></h1>
 <p>所以工程采用的是 JS 动态拉取策略去加载资源，例如我在 Vue3 工程里的 <code v-pre>index.ts</code> 是这样做的：</p>
-<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts" data-title="ts"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> ModelType<span class="token punctuation">,</span> ReturnDataType <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./types/model"</span><span class="token punctuation">;</span></span>
+<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> ModelType<span class="token punctuation">,</span> ReturnDataType <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./types/model"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">import</span> appConfig <span class="token keyword">from</span> <span class="token string">"../app.config"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createApp <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">APP_NAME</span> <span class="token punctuation">}</span> <span class="token operator">=</span> appConfig<span class="token punctuation">;</span></span>

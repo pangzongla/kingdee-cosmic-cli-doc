@@ -2,7 +2,7 @@
 <p>在开始介绍起步工程前，需要提前了解下全局配置信息。</p>
 <p>每个起步工程的根目录有一个叫 <code v-pre>app.config.js</code> 的文件，这里面设置了整个工程的所有配置信息。</p>
 <p>例如你看到的应该是：</p>
-<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token comment">/* 苍穹相关 */</span></span>
 <span class="line">  <span class="token constant">APP_NAME</span><span class="token operator">:</span> <span class="token string">'vue_demo'</span><span class="token punctuation">,</span> <span class="token comment">// 自定义控件名称</span></span>
 <span class="line">  <span class="token constant">ISV</span><span class="token operator">:</span> <span class="token string">'kingdee'</span><span class="token punctuation">,</span> <span class="token comment">// 开发商标识</span></span>
