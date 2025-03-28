@@ -5,10 +5,10 @@
 在自定义控件中，如果想和后端做数据交互，需要借助全局对象 `model` 的 API 调用才行，例如：
 
 ```js
-model.invoke('click', 'Hello World!')
+model.invoke("click", "Hello World!");
 ```
 
-> 想要了解更多关于 `model` 的信息，请参考 [360°教你搞定“自定义控件”（API手册篇）](https://vip.kingdee.com/article/315434614497953792?productLineId=29&isKnowledge=2&lang=zh-CN)，如果链接失效了，请从右上角的社区链接进入，然后自行搜索~
+> 想要了解更多关于 `model` 的信息，请参考 [360° 教你搞定“自定义控件”（API 手册篇）](https://vip.kingdee.com/article/315434614497953792?productLineId=29&isKnowledge=2&lang=zh-CN)，如果链接失效了，请从右上角的社区链接进入，然后自行搜索~
 
 当后端返回数据时，会触发控件注册时的 `update` 方法，从而获取到返回的数据。
 
@@ -19,7 +19,7 @@ model.invoke('click', 'Hello World!')
 - 在咱们的 RAM 模式开发时，根本就没有 `model` 这个全局对象，无法调用异步请求。
 
 如果有一个统一的 API 方法调用，并且支持 Promise、Await 写法，那么就可以很方便地解决上述问题。于是我设计了一个请求策略来模拟 Promise 行为，并且提供了两种请求模式。
- 
+
 ## 请求模式的设计
 
 假设我们有几个不同的请求方法/任务，例如 `a, b, c` 。但同一个请求方法可能会被陆续请求多次，所以同一个请求方法的不同时间触发会在后面加数字表示，例如 `a1, a2, a3` 。
@@ -35,6 +35,7 @@ model.invoke('click', 'Hello World!')
 这样做的理由是保证 `update` 触发的时候能够跟队列里的请求任务对应上，这样任务返回的数据才能匹配对。
 
 这个模式不足之处是：
+
 - 如果 `a1` 请求很慢，那么 `a2` 都要等待 `a1` 请求结束才能开始执行。
 
 - 不同任务无法并发执行。
@@ -65,6 +66,6 @@ model.invoke('click', 'Hello World!')
 
 具体代码位置需要参考后面 React18 和 Vue3 章节的接口请求书写方式。
 
+## 坑
 
-
-
+- 若两次请求结果是一模一样的，苍穹第二次是不会触发 `update` 事件的，建议返回的内容都加个时间戳字段。
