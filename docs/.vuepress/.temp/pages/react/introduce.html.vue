@@ -12,7 +12,12 @@
 </ul>
 <h2 id="✨-新特性" tabindex="-1"><a class="header-anchor" href="#✨-新特性"><span>✨ 新特性</span></a></h2>
 <ul>
-<li>📷 新增工程内部所有 SVG 图片的预览指令。</li>
+<li>
+<p>将原来的 Redux 换成了 Zustand。</p>
+</li>
+<li>
+<p>📷 新增工程内部所有 SVG 图片的预览指令。</p>
+</li>
 </ul>
 </div></template>
 

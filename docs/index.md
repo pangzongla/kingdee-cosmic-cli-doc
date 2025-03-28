@@ -3,8 +3,15 @@ home: true
 heroImage: images/home.svg
 heroText: kingdee-cosmic-cli
 tagline: 🔥 金蝶云苍穹平台自定义控件开发脚手架 🔥
-actionText: 快速上手 →
-actionLink: /guide/introduce
+actions:
+  - text: 快速上手 →
+    link: /guide/getting-started
+    type: primary
+  # 可以添加第二个按钮
+  # - text: 项目简介
+  #   link: /guide/
+  #   type: secondary
+
 features:
   - title: 📦 开箱即用
     details: 通过指令迅速搭建自定义控件工程开发模板。
@@ -21,7 +28,7 @@ features:
   - title: 🎭 提供图标公共组件
     details: 通过实战推荐在苍穹平台上最适合的图标展示方案。
   - title: 📐 代码格式规范
-    details: 可选加入 ESlint 校验你的代码，且是最轻量的方案。
+    details: 自带 ESlint 校验你的代码，且是最轻量的方案。
   - title: 🌏 国际化多语言
     details: 支持开发环境和生产环境的国际化多语言切换。
 footer: 2024 | Maked BY 庞囧

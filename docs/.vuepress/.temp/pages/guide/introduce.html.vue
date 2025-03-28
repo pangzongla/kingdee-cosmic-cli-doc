@@ -24,6 +24,9 @@
 <h1 id="✨-新特性" tabindex="-1"><a class="header-anchor" href="#✨-新特性"><span>✨ 新特性</span></a></h1>
 <ul>
 <li>
+<p>React 版本新增 Ant Design 可选项。</p>
+</li>
+<li>
 <p>新增国际化多语言方案。</p>
 </li>
 <li>

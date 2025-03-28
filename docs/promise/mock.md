@@ -29,3 +29,21 @@ if (this.isInitData) this.isInitData = false;
 ## 数据伪造
 
 基本上伪造数据只需要在 `/mock` 文件夹中修改即可。
+
+- `data` 文件夹存放数据。
+- `files` 文件夹和文件上传有关
+
+其他相关文件夹为配置，如果想针对接口修改请求返回的时间，可以在这里修改 `routes` ：
+
+```ts
+mockList.forEach((item) => {
+  const { url, method, response } = item;
+  const handler = httpMethods[method.toLowerCase()];
+
+  if (handler) {
+    handler(url, delayResponse(response)); // here
+  } else {
+    console.error(`Method ${method} is not supported.`);
+  }
+});
+```

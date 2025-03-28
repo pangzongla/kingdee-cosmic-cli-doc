@@ -1,6 +1,8 @@
-<template><div><h1 id="脚手架未来支持" tabindex="-1"><a class="header-anchor" href="#脚手架未来支持"><span>脚手架未来支持</span></a></h1>
+<template><div><h1 id="写在前面" tabindex="-1"><a class="header-anchor" href="#写在前面"><span>写在前面</span></a></h1>
+<p>由于本人精力有限，还有其他个人爱好，所以应该不会频繁更新，请见谅~</p>
+<h1 id="脚手架未来支持" tabindex="-1"><a class="header-anchor" href="#脚手架未来支持"><span>脚手架未来支持</span></a></h1>
 <ul>
-<li>React18 起步工程加入 KDesign 组件库可选项。</li>
+<li>暂无新规划</li>
 </ul>
 <h1 id="react18-起步工程未来支持" tabindex="-1"><a class="header-anchor" href="#react18-起步工程未来支持"><span>React18 起步工程未来支持</span></a></h1>
 <ul>
@@ -30,16 +32,13 @@
 <p>目前有效的分支为：</p>
 <ul>
 <li>
-<p>master ：React18 起步工程</p>
+<p>react18+eslint ：React18 起步工程</p>
 </li>
 <li>
-<p>react18+eslint ：React18 + ESlint 起步工程</p>
+<p>react+antd+eslint ：React18 + AntD 起步工程</p>
 </li>
 <li>
-<p>vue3 ：Vue3 起步工程</p>
-</li>
-<li>
-<p>vue3+eslint ：Vue3 + ESlint 起步工程</p>
+<p>vue3+eslint ：Vue3 起步工程</p>
 </li>
 </ul>
 </div></template>

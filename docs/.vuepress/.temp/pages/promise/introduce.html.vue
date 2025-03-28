@@ -52,10 +52,6 @@
 <h2 id="遗憾-😪" tabindex="-1"><a class="header-anchor" href="#遗憾-😪"><span>遗憾 😪</span></a></h2>
 <p>对于那种不是前端主动要的，而是后端主动推动的数据，由于在队列种没有对应任务，所以无法通过 API 去获取数据，目前的做法是帮开发者捕获到，但让开发者自行选择方案数据传递的方案。</p>
 <p>具体代码位置需要参考后面 React18 和 Vue3 章节的接口请求书写方式。</p>
-<h2 id="坑" tabindex="-1"><a class="header-anchor" href="#坑"><span>坑</span></a></h2>
-<ul>
-<li>若两次请求结果是一模一样的，苍穹第二次是不会触发 <code v-pre>update</code> 事件的，建议返回的内容都加个时间戳字段。</li>
-</ul>
 </div></template>
 
 

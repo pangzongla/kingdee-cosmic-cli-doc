@@ -1,6 +1,10 @@
+# 写在前面
+
+由于本人精力有限，还有其他个人爱好，所以应该不会频繁更新，请见谅~
+
 # 脚手架未来支持
 
-- React18 起步工程加入 KDesign 组件库可选项。
+- 暂无新规划
 
 # React18 起步工程未来支持
 
@@ -30,10 +34,8 @@
 
 目前有效的分支为：
 
-- master ：React18 起步工程
+- react18+eslint ：React18 起步工程
 
-- react18+eslint ：React18 + ESlint 起步工程
+- react+antd+eslint ：React18 + AntD 起步工程
 
-- vue3 ：Vue3 起步工程
-
-- vue3+eslint ：Vue3 + ESlint 起步工程
+- vue3+eslint ：Vue3 起步工程

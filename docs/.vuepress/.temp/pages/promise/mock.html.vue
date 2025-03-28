@@ -17,6 +17,22 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="数据伪造" tabindex="-1"><a class="header-anchor" href="#数据伪造"><span>数据伪造</span></a></h2>
 <p>基本上伪造数据只需要在 <code v-pre>/mock</code> 文件夹中修改即可。</p>
-</div></template>
+<ul>
+<li><code v-pre>data</code> 文件夹存放数据。</li>
+<li><code v-pre>files</code> 文件夹和文件上传有关</li>
+</ul>
+<p>其他相关文件夹为配置，如果想针对接口修改请求返回的时间，可以在这里修改 <code v-pre>routes</code> ：</p>
+<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line">mockList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> url<span class="token punctuation">,</span> method<span class="token punctuation">,</span> response <span class="token punctuation">}</span> <span class="token operator">=</span> item<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">const</span> handler <span class="token operator">=</span> httpMethods<span class="token punctuation">[</span>method<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">handler</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token function">delayResponse</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// here</span></span>
+<span class="line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Method </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is not supported.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 
