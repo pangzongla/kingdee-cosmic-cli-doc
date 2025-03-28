@@ -6,11 +6,12 @@
 
 - [![](https://img.shields.io/badge/TypeScript-{})]()
 - [![](https://img.shields.io/badge/React18-{})]()
-- [![](https://img.shields.io/badge/Redux-{})]()
+- [![](https://img.shields.io/badge/Zustand-{})]()
 - [![](https://img.shields.io/badge/Webpack5-{})]()
 - [![](https://img.shields.io/badge/Websocket-{})]()
 - [![](https://img.shields.io/badge/Axios-{})]()
 - [![](https://img.shields.io/badge/Color-{})]()
 
 ## ✨ 新特性
-- 📷 新增工程内部所有SVG图片的预览指令。
+
+- 📷 新增工程内部所有 SVG 图片的预览指令。
