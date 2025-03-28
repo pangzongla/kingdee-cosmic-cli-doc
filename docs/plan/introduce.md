@@ -6,8 +6,6 @@
 
 - 优化 Webpack 配置。
 
-- 将 Redux 替换成 Zustand。
-
 - 加入 git cz 代码提交规范。
 
 # Vue3 起步工程未来支持
