@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "or": "^0.2.0"
+  },
+  "overrides": {
+    "execa": "7.1.0"
   }
 }
