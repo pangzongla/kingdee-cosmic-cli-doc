@@ -19,7 +19,7 @@
 </ul>
 <p><strong>但是现在！kingdee-cosmic-cli 来了，将给你带来不一样的开发体验~ 😆</strong></p>
 <blockquote>
-<p><a href="https://www.npmjs.com/package/kingdee-cosmic-cli" target="_blank" rel="noopener noreferrer">脚手架npm地址</a></p>
+<p><a href="https://www.npmjs.com/package/kingdee-cosmic-cli" target="_blank" rel="noopener noreferrer">脚手架 npm 地址</a></p>
 </blockquote>
 <h1 id="✨-新特性" tabindex="-1"><a class="header-anchor" href="#✨-新特性"><span>✨ 新特性</span></a></h1>
 <ul>
@@ -28,9 +28,6 @@
 </li>
 <li>
 <p>ESlint 轻量化方案替换。</p>
-</li>
-<li>
-<p>新增对 Vue3 的支持。</p>
 </li>
 </ul>
 <p><strong>如果好用请 star 🌟 鼓励一下~</strong></p>

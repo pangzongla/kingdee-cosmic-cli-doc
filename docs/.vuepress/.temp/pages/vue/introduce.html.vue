@@ -11,8 +11,10 @@
 </ul>
 <h2 id="✨-新特性" tabindex="-1"><a class="header-anchor" href="#✨-新特性"><span>✨ 新特性</span></a></h2>
 <ul>
-<li>📷 新增工程内部所有SVG图片的预览指令。</li>
+<li>📷 新增工程内部所有 SVG 图片的预览指令。</li>
 </ul>
+<h2 id="说明" tabindex="-1"><a class="header-anchor" href="#说明"><span>说明</span></a></h2>
+<p>由于本人精力有限，加上公司大部分用的前端框架是 React，所以 Vue 版本会落后于 React 版本。</p>
 </div></template>
 
 
