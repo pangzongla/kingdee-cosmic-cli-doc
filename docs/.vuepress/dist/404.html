@@ -3,35 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-rc.11" />
+    <meta name="generator" content="VuePress 2.0.0-rc.20" />
     <style>
       :root {
-        --c-bg: #fff;
+        --vp-c-bg: #fff;
       }
-      html.dark {
-        --c-bg: #22272e;
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
       }
+
       html,
       body {
-        background-color: var(--c-bg);
+        background-color: var(--vp-c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme')
-      const systemDarkMode =
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-        document.documentElement.classList.toggle('dark', true)
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
       }
     </script>
     <link rel="icon" href="/images/icon.png"><title>kingdee-cosmic-cli</title><meta name="description" content="kingdee-cosmic-cli的官方使用指导">
-    <link rel="preload" href="/assets/style-D6OC2O4_.css" as="style"><link rel="stylesheet" href="/assets/style-D6OC2O4_.css">
-    <link rel="modulepreload" href="/assets/app-C1_8jAz9.js"><link rel="modulepreload" href="/assets/404.html-BrArHltc.js">
-    <link rel="prefetch" href="/assets/index.html-47mkTq65.js" as="script"><link rel="prefetch" href="/assets/index.html-47mkTq65.js" as="script"><link rel="prefetch" href="/assets/introduce.html-CkrH4811.js" as="script"><link rel="prefetch" href="/assets/cosmic.html-BXIBKjP9.js" as="script"><link rel="prefetch" href="/assets/introduce.html-AcXKlxYu.js" as="script"><link rel="prefetch" href="/assets/ram.html-D_NxKQv5.js" as="script"><link rel="prefetch" href="/assets/getting-started.html-B00usA39.js" as="script"><link rel="prefetch" href="/assets/introduce.html-Cdz4Eeel.js" as="script"><link rel="prefetch" href="/assets/index.html-6-ufznTy.js" as="script"><link rel="prefetch" href="/assets/upgrade.html-BGigy-rZ.js" as="script"><link rel="prefetch" href="/assets/introduce.html-DvKGvV16.js" as="script"><link rel="prefetch" href="/assets/introduce.html-ByExpEDB.js" as="script"><link rel="prefetch" href="/assets/introduce.html-BbCDaR7U.js" as="script"><link rel="prefetch" href="/assets/introduce.html-BPbcqAla.js" as="script"><link rel="prefetch" href="/assets/mock.html-BJQlbPb7.js" as="script"><link rel="prefetch" href="/assets/ajax.html-BAOwsDeV.js" as="script"><link rel="prefetch" href="/assets/introduce.html-jDn1nR2E.js" as="script"><link rel="prefetch" href="/assets/store.html-hKdhTQ2W.js" as="script"><link rel="prefetch" href="/assets/introduce.html-CpHfee0j.js" as="script"><link rel="prefetch" href="/assets/introduce.html-DDisrQZD.js" as="script"><link rel="prefetch" href="/assets/introduce.html-DFSYis-Y.js" as="script"><link rel="prefetch" href="/assets/ajax.html-DLQlZuSQ.js" as="script"><link rel="prefetch" href="/assets/introduce.html-B5ex3T5_.js" as="script"><link rel="prefetch" href="/assets/store.html-BqCMDf38.js" as="script">
+    <link rel="preload" href="/assets/style-sBhLiHEP.css" as="style"><link rel="stylesheet" href="/assets/style-sBhLiHEP.css">
+    <link rel="modulepreload" href="/assets/app-D9U6wW6q.js"><link rel="modulepreload" href="/assets/404.html-CCLDuvUS.js">
+    <link rel="prefetch" href="/assets/index.html-gJMNHACC.js" as="script"><link rel="prefetch" href="/assets/index.html-gJMNHACC.js" as="script"><link rel="prefetch" href="/assets/introduce.html-B75iyYMi.js" as="script"><link rel="prefetch" href="/assets/cosmic.html-K7A6HvHQ.js" as="script"><link rel="prefetch" href="/assets/introduce.html-uzlacyfP.js" as="script"><link rel="prefetch" href="/assets/ram.html-DGDVxdWJ.js" as="script"><link rel="prefetch" href="/assets/introduce.html-kmbQukll.js" as="script"><link rel="prefetch" href="/assets/index.html-BmqnTDom.js" as="script"><link rel="prefetch" href="/assets/getting-started.html-DAZlH3bw.js" as="script"><link rel="prefetch" href="/assets/introduce.html-Bm3fTZ3z.js" as="script"><link rel="prefetch" href="/assets/upgrade.html-BFQ8H32Z.js" as="script"><link rel="prefetch" href="/assets/introduce.html-knaw64lV.js" as="script"><link rel="prefetch" href="/assets/introduce.html-DgKEhXRF.js" as="script"><link rel="prefetch" href="/assets/introduce.html-CfVDtT9I.js" as="script"><link rel="prefetch" href="/assets/mock.html-Hee50n0e.js" as="script"><link rel="prefetch" href="/assets/ajax.html-Bey1dqnc.js" as="script"><link rel="prefetch" href="/assets/internationalization.html-BAQDN3nF.js" as="script"><link rel="prefetch" href="/assets/introduce.html-Bn33nb7d.js" as="script"><link rel="prefetch" href="/assets/store.html-pceiAyIu.js" as="script"><link rel="prefetch" href="/assets/introduce.html-DuksRt9i.js" as="script"><link rel="prefetch" href="/assets/notice.html-DB2-0P2t.js" as="script"><link rel="prefetch" href="/assets/rules.html-ChFfKXT-.js" as="script"><link rel="prefetch" href="/assets/introduce.html-Dexz6gHa.js" as="script"><link rel="prefetch" href="/assets/introduce.html-Cr1onJo_.js" as="script"><link rel="prefetch" href="/assets/ajax.html-B9g2a3Bk.js" as="script"><link rel="prefetch" href="/assets/internationalization.html-Cm5OGzkR.js" as="script"><link rel="prefetch" href="/assets/introduce.html-B-qam0mq.js" as="script"><link rel="prefetch" href="/assets/store.html-KyVbyJIp.js" as="script">
   </head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a class="route-link" href="/">Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-C1_8jAz9.js" defer></script>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-5a8f08c6><main class="page" data-v-5a8f08c6><div vp-content data-v-5a8f08c6><h1 data-v-5a8f08c6>404</h1><blockquote data-v-5a8f08c6>There&#39;s nothing here.</blockquote><a class="route-link" href="/" data-v-5a8f08c6>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-D9U6wW6q.js" defer></script>
   </body>
 </html>

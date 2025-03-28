@@ -8,9 +8,6 @@
 <p>优化 Webpack 配置。</p>
 </li>
 <li>
-<p>将 Redux 替换成 Zustand。</p>
-</li>
-<li>
 <p>加入 git cz 代码提交规范。</p>
 </li>
 </ul>

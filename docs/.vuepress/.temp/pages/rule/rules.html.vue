@@ -45,7 +45,7 @@
 </tr>
 <tr>
 <td>变量名</td>
-<td>小驼峰命名法，布尔类型用is/has开头</td>
+<td>小驼峰命名法，布尔类型用 is/has 开头</td>
 <td>userInfo、isInstall</td>
 </tr>
 <tr>
@@ -68,14 +68,14 @@
 <li>写主要注释
 <strong>复杂方法、组件需要注释</strong></li>
 </ol>
-<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token doc-comment comment">/** </span>
-<span class="line"> * <span class="token keyword">@description</span> 计算两数之和 </span>
-<span class="line"> * <span class="token keyword">@param</span> <span class="token parameter">a</span> <span class="token punctuation">{</span>string | number<span class="token punctuation">}</span> 第一个加数 </span>
-<span class="line"> * <span class="token keyword">@param</span> <span class="token parameter">b</span> <span class="token punctuation">{</span>?string | number | undefined<span class="token punctuation">}</span> 第二个加数 </span>
-<span class="line"> * <span class="token keyword">@returns</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 两数之和 </span>
-<span class="line"> */</span> </span>
-<span class="line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> </span>
-<span class="line">  <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">Number</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> </span>
+<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token doc-comment comment">/**</span>
+<span class="line"> * <span class="token keyword">@description</span> 计算两数之和</span>
+<span class="line"> * <span class="token keyword">@param</span> <span class="token parameter">a</span> <span class="token punctuation">{</span>string | number<span class="token punctuation">}</span> 第一个加数</span>
+<span class="line"> * <span class="token keyword">@param</span> <span class="token parameter">b</span> <span class="token punctuation">{</span>?string | number | undefined<span class="token punctuation">}</span> 第二个加数</span>
+<span class="line"> * <span class="token keyword">@returns</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 两数之和</span>
+<span class="line"> */</span></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">Number</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
@@ -91,14 +91,14 @@
 <h2 id="编码规范" tabindex="-1"><a class="header-anchor" href="#编码规范"><span>编码规范</span></a></h2>
 <p><strong>函数编码</strong></p>
 <ol>
-<li>超过1个地方的重复逻辑则封装成函数，超过2个地方使用的函数则抽成工具函数</li>
+<li>超过 1 个地方的重复逻辑则封装成函数，超过 2 个地方使用的函数则抽成工具函数</li>
 <li>函数与函数之间用一个空行隔开（Eslint 校验支持）</li>
 <li>函数柯里化：一个函数就干一件事</li>
 </ol>
 <p><strong>组件编码顺序</strong></p>
 <ol>
 <li>解构 <code v-pre>props</code> (如果有)</li>
-<li>react相关的第三方包中的钩子函数(除了 useEffect )</li>
+<li>react 相关的第三方包中的钩子函数(除了 useEffect )</li>
 <li>方法(跟 api 有关的方法放最后)</li>
 <li>内部组件</li>
 <li>useEffect
@@ -106,7 +106,7 @@
 (2). 有依赖(按照调用的先后顺序排序)
 (3). 返回值是函数</li>
 </ol>
-<p><strong>jsx编码规则</strong></p>
+<p><strong>jsx 编码规则</strong></p>
 <ol>
 <li>使用 jsx（tsx）语法</li>
 <li>没有子节点的组件，使用自闭合语法</li>
@@ -118,16 +118,16 @@
 </ol>
 <ul>
 <li>每个属性各占一行</li>
-<li>属性值如果是常量字符串，使用字面量赋值title=&quot;标题1&quot;，而不是title={'标题1'}</li>
+<li>属性值如果是常量字符串，使用字面量赋值 title=&quot;标题 1&quot;，而不是 title={'标题 1'}</li>
 <li>属性值如果是 true ，则省略属性值</li>
 <li>属性在前，方法在后</li>
 <li>闭标签另起一行</li>
 </ul>
-<div class="language-jsx line-numbers-mode" data-highlighter="prismjs" data-ext="jsx"><pre v-pre><code><span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ConfirmModal</span></span> </span>
+<div class="language-jsx line-numbers-mode" data-highlighter="prismjs" data-ext="jsx"><pre v-pre><code><span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ConfirmModal</span></span></span>
 <span class="line">  <span class="token attr-name">visible</span></span>
 <span class="line">  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>标题1<span class="token punctuation">"</span></span></span>
 <span class="line">  <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>我是body正文<span class="token punctuation">"</span></span></span>
-<span class="line">  <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#ccc'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span></span>
+<span class="line">  <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"#ccc"</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span></span>
 <span class="line">  <span class="token attr-name">onCancel</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">handleModalCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span></span>
 <span class="line"><span class="token punctuation">/></span></span></span>
 <span class="line"></span></code></pre>
@@ -143,8 +143,8 @@
 </ol>
 <p><strong>import 规范</strong></p>
 <ol>
-<li>与react相关的第三方包
-比如react、react-redux、react-router (按照包使用的先后顺序排序)</li>
+<li>与 react 相关的第三方包
+比如 react、zustand、react-router (按照包使用的先后顺序排序)</li>
 <li>其他第三方包</li>
 <li>组件库
 <ul>
@@ -182,7 +182,7 @@
 <h2 id="git-提交规范" tabindex="-1"><a class="header-anchor" href="#git-提交规范"><span>git 提交规范</span></a></h2>
 <p><strong>commit 分类为，必选其一：</strong></p>
 <ol>
-<li>fix: 修复bug</li>
+<li>fix: 修复 bug</li>
 <li>hotfix:线上问题紧急修复</li>
 <li>feat: 新功能</li>
 <li>test: 增加单元测试代码</li>
@@ -192,49 +192,49 @@
 <li>build: 构建工具或构建过程等的变动，如：gulp 换成了 webpack，webpack 升级等</li>
 <li>cover：代码覆盖，如：主干覆盖基线</li>
 <li>format：代码格式化</li>
-<li>description 是对本次提交的简短描述。不超过50个字符，推荐以动词开头，如： 设置、修改、增加、删减、撤销等</li>
+<li>description 是对本次提交的简短描述。不超过 50 个字符，推荐以动词开头，如： 设置、修改、增加、删减、撤销等</li>
 </ol>
 <h2 id="类型" tabindex="-1"><a class="header-anchor" href="#类型"><span>类型</span></a></h2>
 <p>全局声明或者不用改动的类型使用 <code v-pre>.d.ts</code>，直接放在根目录</p>
 <ol>
-<li>组件内使用的类型一般直接定义在组件文件内（同 hooks、util等）</li>
+<li>组件内使用的类型一般直接定义在组件文件内（同 hooks、util 等）</li>
 <li>关联组件类型较多可以单独使用 <code v-pre>type.ts</code> 来声明类型，这类复杂且有关联类型必要时需要注释</li>
 <li>store 中如果数据较多，使用 <code v-pre>type.ts</code> 来声明类型，必要时需要注释</li>
 <li>react 中一些 hooks 方法，包括大多数第三方库暴露的方法都是需要传入泛型</li>
 </ol>
-<h2 id="ts规范" tabindex="-1"><a class="header-anchor" href="#ts规范"><span>ts规范</span></a></h2>
+<h2 id="ts-规范" tabindex="-1"><a class="header-anchor" href="#ts-规范"><span>ts 规范</span></a></h2>
 <p>1、使用枚举设置常量集合</p>
 <div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token comment">// Bad</span></span>
 <span class="line"><span class="token keyword">const</span> Status <span class="token operator">=</span> <span class="token punctuation">{</span></span>
-<span class="line">    Success<span class="token operator">:</span> <span class="token string">'success'</span></span>
-<span class="line"><span class="token punctuation">}</span></span>
+<span class="line">  Success<span class="token operator">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment">// Good</span></span>
 <span class="line"><span class="token keyword">enum</span> Status <span class="token punctuation">{</span></span>
-<span class="line">    Success <span class="token operator">=</span> <span class="token string">'success'</span></span>
+<span class="line">  Success <span class="token operator">=</span> <span class="token string">"success"</span><span class="token punctuation">,</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、引用类型变量应该保证类型正确，不正确的需要手动声明</p>
 <div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token comment">//自动推断</span></span>
-<span class="line"><span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">// number[]</span></span>
+<span class="line"><span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// number[]</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token comment">// 显示声明</span></span>
 <span class="line"><span class="token comment">// Bad</span></span>
-<span class="line"><span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// any[]</span></span>
+<span class="line"><span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// any[]</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment">// Good</span></span>
-<span class="line"><span class="token keyword">let</span> bar<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
+<span class="line"><span class="token keyword">let</span> bar<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、不要为返回值会被忽略的回调函数设置返回值类型<code v-pre>any</code>：</p>
 <div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token comment">// Bad</span></span>
 <span class="line"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token function-variable function">x</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
-<span class="line">    <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>应该为返回值会被忽略的回调函数设置返回值类型<code v-pre>void</code>：</p>
 <div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token comment">// Good</span></span>
 <span class="line"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token function-variable function">x</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
-<span class="line">    <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
