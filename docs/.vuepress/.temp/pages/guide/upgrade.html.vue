@@ -6,9 +6,7 @@
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">npm</span> update <span class="token parameter variable">-g</span> kingdee-cosmic-cli</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>建议每次创建项目前都看看脚手架是否有版本更新。</strong></p>
-<blockquote>
-<p><a href="https://www.npmjs.com/package/kingdee-cosmic-cli" target="_blank" rel="noopener noreferrer">脚手架 npm 地址</a></p>
-</blockquote>
+<!-- > [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli) -->
 </div></template>
 
 

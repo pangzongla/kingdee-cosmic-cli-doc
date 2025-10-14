@@ -27,20 +27,17 @@
 <p>或者直接云之家联系我：刘景庞</p>
 <p>感谢以下大佬的建议与支持：</p>
 <p><a href="https://gitee.com/Quintus-Peng" target="_blank" rel="noopener noreferrer">@zzkkui</a></p>
-<h2 id="起步工程仓库说明" tabindex="-1"><a class="header-anchor" href="#起步工程仓库说明"><span>起步工程仓库说明</span></a></h2>
-<p>地址：<a href="https://gitee.com/pangzong/kingdee-cosmic" target="_blank" rel="noopener noreferrer">Gitee</a></p>
-<p>目前有效的分支为：</p>
-<ul>
-<li>
-<p>react18+eslint ：React18 起步工程</p>
-</li>
-<li>
-<p>react+antd+eslint ：React18 + AntD 起步工程</p>
-</li>
-<li>
-<p>vue3+eslint ：Vue3 起步工程</p>
-</li>
-</ul>
+<!-- ## 起步工程仓库说明
+
+地址：[Gitee](https://gitee.com/pangzong/kingdee-cosmic)
+
+目前有效的分支为：
+
+- react18+eslint ：React18 起步工程
+
+- react+antd+eslint ：React18 + AntD 起步工程
+
+- vue3+eslint ：Vue3 起步工程 -->
 </div></template>
 
 

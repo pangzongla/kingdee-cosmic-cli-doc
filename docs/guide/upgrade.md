@@ -14,4 +14,4 @@ npm update -g kingdee-cosmic-cli
 
 **建议每次创建项目前都看看脚手架是否有版本更新。**
 
-> [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli)
+<!-- > [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli) -->

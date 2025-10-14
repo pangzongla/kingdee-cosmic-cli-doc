@@ -28,7 +28,7 @@
 
 [@zzkkui](https://gitee.com/Quintus-Peng)
 
-## 起步工程仓库说明
+<!-- ## 起步工程仓库说明
 
 地址：[Gitee](https://gitee.com/pangzong/kingdee-cosmic)
 
@@ -38,4 +38,4 @@
 
 - react+antd+eslint ：React18 + AntD 起步工程
 
-- vue3+eslint ：Vue3 起步工程
+- vue3+eslint ：Vue3 起步工程 -->

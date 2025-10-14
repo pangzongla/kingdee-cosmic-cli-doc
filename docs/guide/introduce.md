@@ -14,7 +14,7 @@
 
 **但是现在！kingdee-cosmic-cli 来了，将给你带来不一样的开发体验~ 😆**
 
-> [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli)
+<!-- > [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli) -->
 
 # ✨ 新特性
 
