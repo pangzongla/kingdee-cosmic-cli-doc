@@ -1,3 +1,3 @@
 import comp from "/Users/liujingpang/code/other/kingdee-cosmic-cli-doc/docs/.vuepress/.temp/pages/internationalization/introduce.html.vue"
-const data = JSON.parse("{\"path\":\"/internationalization/introduce.html\",\"title\":\"国际化多语言方案\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[],\"git\":{},\"filePathRelative\":\"internationalization/introduce.md\"}")
+const data = JSON.parse("{\"path\":\"/internationalization/introduce.html\",\"title\":\"国际化多语言方案\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1773107926000,\"contributors\":[{\"name\":\"pangzong\",\"username\":\"pangzong\",\"email\":\"980100681@qq.com\",\"commits\":1,\"url\":\"https://github.com/pangzong\"}],\"changelog\":[{\"hash\":\"74b84c8cf50aed1ba6aa8832d11bb26aec47d91f\",\"time\":1773107926000,\"email\":\"980100681@qq.com\",\"author\":\"pangzong\",\"message\":\"feat: 更新AI特性\"}]},\"filePathRelative\":\"internationalization/introduce.md\"}")
 export { comp, data }
