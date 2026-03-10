@@ -8,7 +8,7 @@
 <blockquote>
 <p>这块自定义控件注册金蝶苍穹社区上有其他人的文档教学，我这里就不多说了，推荐两个系列文章：
 <a href="https://vip.kingdee.com/article/150626162270913792?productLineId=29&amp;lang=zh-CN" target="_blank" rel="noopener noreferrer">自定义控件系列（持续更新）</a>、
-<a href="https://vip.kingdee.com/article/315085275967999232?productLineId=29&amp;isKnowledge=2&amp;lang=zh-CN" target="_blank" rel="noopener noreferrer">360°教你搞定“自定义控件开发”</a>
+<a href="https://vip.kingdee.com/article/315085275967999232?productLineId=29&amp;isKnowledge=2&amp;lang=zh-CN" target="_blank" rel="noopener noreferrer">360° 教你搞定“自定义控件开发”</a>
 如果链接失效了，请从右上角的社区链接进入，然后自行搜索~</p>
 </blockquote>
 <p><img src="@source/dev/images/1.png" alt="例子"></p>
@@ -16,10 +16,12 @@
 <p><img src="@source/dev/images/2.png" alt="例子"></p>
 <p>此时我们看不见自定义控件，需要在地址后面拼上 <code v-pre>&amp;kdcus_cdn=http://localhost:3000</code> ，然后刷新一下，自定义控件就出现了：</p>
 <p><img src="@source/dev/images/3.png" alt="例子"></p>
-<p>当我们修改开发代码的时候，保存，工程会自动更新 <code v-pre>cache</code> 里的文件，目前体验速度和平常开发没啥区别。然后到页面上刷新下，界面就更新了。</p>
+<p>当我们修改开发代码的时候，保存，工程会自动更新 <code v-pre>cache</code> 里的文件，目前体验速度和平常开发没啥区别。然后改动小的情况下会无感知热更新，大改动会自动刷新苍穹的页面，之后界面就更新了。</p>
+<blockquote>
 <p>注意！如果后端环境更新了，需要重新从 &quot;眼睛&quot; 预览按钮那里重新打开页面，不然页面关联到的后端资源还是旧的。</p>
-<p>当然具体想怎么浏览效果还是视情况而定，我只是提供了一个简单的方法~。</p>
-<p><strong>这开发、联调体验嗖嗖的提升！😝</strong></p>
+</blockquote>
+<p><strong>当然具体想怎么浏览效果还是视情况而定，我只是提供了一个简单的方法。咱也可以直接正常在真实的页面里调试</strong></p>
+<p><strong>如此一来，开发与联调体验大幅提升，开发效率事半功倍！😝</strong></p>
 <p>如果想修改端口号，可以在 <code v-pre>app.config.js</code> 中修改 <code v-pre>DEV_CACHE_PORT</code></p>
 </div></template>
 

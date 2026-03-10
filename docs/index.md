@@ -4,13 +4,12 @@ heroImage: images/home.svg
 heroText: kingdee-cosmic-cli
 tagline: 🔥 金蝶云苍穹平台自定义控件开发脚手架 🔥
 actions:
-  - text: 快速上手 →
+  - text: 🚀 快速上手 →
     link: /guide/getting-started
     type: primary
-  # 可以添加第二个按钮
-  # - text: 项目简介
-  #   link: /guide/
-  #   type: secondary
+  - text: 🤖 AI 辅助 →
+    link: /ai/introduce
+    type: primary
 
 features:
   - title: 📦 开箱即用

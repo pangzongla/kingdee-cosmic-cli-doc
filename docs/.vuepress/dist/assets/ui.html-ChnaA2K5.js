@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app-BdEkBqzb.js";const c={};function r(o,i){return a(),e("div")}const s=t(c,[["render",r]]),_=JSON.parse('{"path":"/ai/ui.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{},"filePathRelative":"ai/ui.md"}');export{s as comp,_ as data};

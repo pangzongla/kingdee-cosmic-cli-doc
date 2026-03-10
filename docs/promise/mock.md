@@ -12,7 +12,7 @@ npm run mock
 
 一般情况下后端会在控件初始化的时候主动推送 `init` 与 `update` 事件，所以第一次 `init`与 `update` 生命周期数据的主动推送永远用的是 `Socket` 方式触发。
 
-在 `serverMock.js` 中通过触发两次 `socket.emit("message", initMock);` 来模拟。
+在 `/mock/socket/socketHandlers.js` 中通过触发两次 `socket.emit("message", initMock);` 来模拟(你也可以自己改)。
 
 前端中为了分辨第一次主动推动 `init` 与 `update` 事件，在 `src/devSocket.ts` 中做了特殊处理：
 

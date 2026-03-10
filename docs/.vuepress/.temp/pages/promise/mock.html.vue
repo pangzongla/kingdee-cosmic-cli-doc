@@ -5,7 +5,7 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>启动的服务端口可在全局配置中修改 <code v-pre>MOCK_PORT</code>。</p>
 <p>为了模拟苍穹平台主动推送信息的能力，ram 模式默认采用 Axios 的方式收发数据，你也可以通过修改全局配置中的 <code v-pre>DEV_RAM_REQUEST_TYPE</code> 变量来决定请求使用的是 Axios 还是 Socket 方式。<code v-pre>axios</code> 为 Axios 模式，<code v-pre>socket</code> 为 Websocket 模式。</p>
 <p>一般情况下后端会在控件初始化的时候主动推送 <code v-pre>init</code> 与 <code v-pre>update</code> 事件，所以第一次 <code v-pre>init</code>与 <code v-pre>update</code> 生命周期数据的主动推送永远用的是 <code v-pre>Socket</code> 方式触发。</p>
-<p>在 <code v-pre>serverMock.js</code> 中通过触发两次 <code v-pre>socket.emit(&quot;message&quot;, initMock);</code> 来模拟。</p>
+<p>在 <code v-pre>/mock/socket/socketHandlers.js</code> 中通过触发两次 <code v-pre>socket.emit(&quot;message&quot;, initMock);</code> 来模拟(你也可以自己改)。</p>
 <p>前端中为了分辨第一次主动推动 <code v-pre>init</code> 与 <code v-pre>update</code> 事件，在 <code v-pre>src/devSocket.ts</code> 中做了特殊处理：</p>
 <div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts"><pre v-pre><code><span class="line"><span class="token keyword">const</span> InitComponent <span class="token operator">=</span> InitComponentSingleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>isInitData<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>

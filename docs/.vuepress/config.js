@@ -73,6 +73,19 @@ export default defineUserConfig({
         ],
       },
       {
+        text: "AI辅助",
+        link: "/ai/introduce",
+        collapsible: false,
+        children: [
+          { text: "介绍", link: "/ai/introduce" },
+          { text: "React 工程提示词", link: "/ai/prompt-react" },
+          { text: "Vue 工程提示词", link: "/ai/prompt-vue" },
+          { text: "Skill", link: "/ai/skill" },
+          { text: "UI 还原", link: "/ai/ui" },
+          { text: "自动化测试", link: "/ai/test" },
+        ],
+      },
+      {
         text: "生产与产物分析事项",
         link: "/prod/introduce",
         collapsible: false,
@@ -93,6 +106,11 @@ export default defineUserConfig({
         ],
       },
       {
+        text: "国际化",
+        link: "/internationalization/introduce",
+        children: [],
+      },
+      {
         text: "React18 起步工程",
         link: "/react/introduce",
         collapsible: false,
@@ -100,7 +118,6 @@ export default defineUserConfig({
           { text: "介绍", link: "/react/introduce" },
           { text: "接口请求书写", link: "/react/ajax" },
           { text: "状态管理", link: "/react/store" },
-          { text: "国际化", link: "/react/internationalization" },
         ],
       },
       {
@@ -111,7 +128,6 @@ export default defineUserConfig({
           { text: "介绍", link: "/vue/introduce" },
           { text: "接口请求书写", link: "/vue/ajax" },
           { text: "状态管理", link: "/vue/store" },
-          { text: "国际化", link: "/vue/internationalization" },
         ],
       },
       {

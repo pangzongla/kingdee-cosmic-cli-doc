@@ -20,6 +20,19 @@
 <p><strong>但是现在！kingdee-cosmic-cli 来了，将给你带来不一样的开发体验~ 😆</strong></p>
 <!-- > [脚手架 npm 地址](https://www.npmjs.com/package/kingdee-cosmic-cli) -->
 <h1 id="✨-新特性" tabindex="-1"><a class="header-anchor" href="#✨-新特性"><span>✨ 新特性</span></a></h1>
+<p>2026/01/06</p>
+<ul>
+<li>
+<p><a href="/ai/introduce">AI 提效辅助</a></p>
+</li>
+<li>
+<p>本地开发模式和苍穹预览模式支持部分的代码热更新。</p>
+</li>
+<li>
+<p>国际化多语言方案提升至全局。</p>
+</li>
+</ul>
+<p>2025</p>
 <ul>
 <li>
 <p>React 版本新增 Ant Design 可选项。</p>
@@ -30,6 +43,10 @@
 <li>
 <p>ESlint 轻量化方案替换。</p>
 </li>
+</ul>
+<p>2024</p>
+<ul>
+<li>脚手架上架</li>
 </ul>
 <p><strong>如果好用请 star 🌟 鼓励一下~</strong></p>
 </div></template>
